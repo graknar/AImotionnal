@@ -5,7 +5,7 @@ from scipy.interpolate import griddata
 
 def plot_4D_dataframe(data):
     # Assumons que les dimensions de 'data' sont (x, y, z, color)
-    x_dim, y_dim, z_dim, color_dim = data.shape
+    x_dim, y_dim, _, _ = data.shape
         
     # Crée une grille de points pour les dimensions x, y
     X, Y = np.meshgrid(np.arange(x_dim), np.arange(y_dim))

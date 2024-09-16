@@ -1,9 +1,8 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-import pandas as pd
 import numpy as np
 import time
-from Visualisation import plot_4D_dataframe
+from Function.Visualisation import plot_4D_dataframe
 
 # Fonction pour générer des données aléatoires
 def generate_data():
