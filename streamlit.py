@@ -19,3 +19,4 @@ while True:
     fig = plot_4D_dataframe(df)
     placeholder.pyplot(fig)
     time.sleep(1)
+    plt.close()
