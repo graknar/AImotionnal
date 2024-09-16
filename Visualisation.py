@@ -35,4 +35,4 @@ def plot_4D_dataframe(data):
     
     # Affiche le plot
     plt.title(f'Smoothed Surface ')
-    plt.show()
+    return fig
