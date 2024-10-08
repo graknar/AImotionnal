@@ -41,4 +41,24 @@ def plot_4D_dataframe(data):
     # Affiche le plot
     plt.title('Smoothed Surface')
     plt.show()
-    return fig
+    return 
+
+
+def create_radar_chart(model, emotions, percentages):
+    angles = np.linspace(0, 2 * np.pi, len(emotions), endpoint=False).tolist()
+    percentages += percentages[:1]  # Boucle le dernier point au début pour fermer le cercle
+    angles += angles[:1]
+
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+    ax.fill(angles, percentages, color='red', alpha=0.25)
+    ax.plot(angles, percentages, color='red', linewidth=2)
+
+    # Suppression des labels de pourcentage sur les rayons
+    ax.set_yticklabels([])
+
+    # Définir les étiquettes des émotions sur le diagramme
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(emotions)
+    ax.set_title(f"Radar Chart for Model: {model}", size=15, color='red', y=1.1)
+    
+    plt.show()
