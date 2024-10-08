@@ -3,7 +3,7 @@ from transformers import pipeline
 def get_emotions(text):
     def classify_emotion(text):
         classifier = pipeline("text-classification", model="cardiffnlp/twitter-roberta-large-emotion-latest")
-        result = classifier(text)
+        result = classifier(text, top_k=None)
         return result
     result = classify_emotion(text)
     emotions = [item['label'] for item in result]

@@ -44,7 +44,7 @@ def plot_4D_dataframe(data):
     return 
 
 
-def create_radar_chart(model, emotions, percentages):
+def create_radar_chart(emotions, percentages):
     angles = np.linspace(0, 2 * np.pi, len(emotions), endpoint=False).tolist()
     percentages += percentages[:1]  # Boucle le dernier point au début pour fermer le cercle
     angles += angles[:1]
@@ -59,6 +59,7 @@ def create_radar_chart(model, emotions, percentages):
     # Définir les étiquettes des émotions sur le diagramme
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(emotions)
-    ax.set_title(f"Radar Chart for Model: {model}", size=15, color='red', y=1.1)
+    ax.set_title(f"Radar Chart", size=15, color='red', y=1.1)
     
     plt.show()
+    return
